@@ -1,0 +1,221 @@
+<app-header></app-header>
+<main>
+    <section class="bg-blue-700">
+        <article class="container mx-auto flex justify-center">
+            <div class="relative flex justify-center items-center text-white">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div class="absolute right-201 top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute right-0 top-0 bottom-0 flex justify-center items-center">
+                    <i class="px-2 fas fa-subway"></i>
+                    <div>
+                        <div>
+                            <span class="text-base font-semibold">Hà Nội</span>
+                            <span class="px-2"><i class="fas fa-arrow-right"></i></span>
+                            <span class="text-base font-semibold">Hải Phòng</span>
+                        </div>
+                        <span class="ml-5">Lựa chọn tàu</span>
+                    </div>
+                </div>
+            </div>
+            <!-- tìm tàu -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="fas fa-memory pr-2"></i>
+                    <span class="text-white font-semibold">Lựa chọn Loại toa</span>
+                </div>
+            </div>
+            <!-- tìm toa -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="material-icons pr-2">airline_seat_recline_normal</i>
+                    <span class="font-semibold">Lựa chọn chỗ ngồi</span>
+                </div>
+            </div>
+            <!-- tìm ghế -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="fas fa-user-lock pr-2"></i>
+                    <span class="font-semibold">Thông tin khách hàng</span>
+                </div>
+            </div>
+            <!-- thông tin khách hàng -->
+            <div class="relative flex justify-center items-center ml-31 ">
+                <div class="w-56 h-16 bg-yellow-500 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-yellow-500 transform rotate-45">
+                    </div>
+                    <div
+                        class="absolute top-0 -left-8 h-8 w-8 border-16 border-yellow-500 border-b-transparent border-l-transparent transform rotate-0">
+                    </div>
+                    <div
+                        class="absolute bottom-0 -left-8 h-8 w-8 border-16 border-yellow-500 border-b-transparent border-l-transparent transform rotate-90">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="far fa-credit-card pr-2"></i>
+                    <span class="font-semibold">Thanh toán</span>
+                </div>
+            </div>
+            <!-- Hoàn thành -->
+        </article>
+    </section>
+    <section class="container mx-auto">
+        <span class="text-3xl font-semibold text-center block uppercase my-10">xác nhận thông tin đặt vé</span>
+        <form [formGroup]='formTicket'
+            class="grid grid-cols-3 my-10 gap-x-5 gap-y-5 border py-5 pr-5  shadow-2xl rounded-lg">
+            <div class="">
+                <div class="grid grid-cols-2 my-4">
+                    <label class="font-semibold text-xl text-right pr-10" for="">Họ và tên</label>
+                <input class="py-1 px-2 focus:outline-none border-b border-gray-500 text-center text-lg" 
+                        type="text" name="" id=""  placeholder="{{user.nameUser}}" value='' > 
+                    
+
+                </div>
+                <!-- end name -->
+                <div class="grid grid-cols-2 my-4">
+                    <label class="font-semibold text-xl text-right pr-10" for="">Số CMND/Hộ chiếu</label>
+                    <input class="py-1 px-2 focus:outline-none border-b border-gray-500 text-center text-lg" type="text"
+                        name="" id="" formControlName='cmnd' placeholder="{{user.cmnd}}" value="{{user.cmnd}}">
+                </div>
+                <!-- end cmnd -->
+                <div class="grid grid-cols-2 my-4">
+                    <label class="font-semibold text-xl text-right pr-10" for="">Số điện thoại</label>
+                    <input class="py-1 px-2 focus:outline-none border-b border-gray-500 text-center text-lg" type="tel"
+                        name="" id="" formControlName='phoneNumber' placeholder="{{user.phoneNumber}}"
+                        value="{{user.phoneNumber}}">
+                </div>
+                <!-- end phone -->
+                <div class="grid grid-cols-2 my-4">
+                    <label class="font-semibold text-xl text-right pr-10" for="">Email</label>
+                    <input class="py-1 px-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        type="email" name="" id="" formControlName='email' placeholder="{{user.email}}"
+                        value="{{user.email}}">
+                </div>
+                <!-- end email -->
+            </div>
+            <div>
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Chặng</label>
+                    <input class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        disabled type="text" name="" id=""
+                        placeholder="{{train.addressArrival.name}}-{{train.addressGo.name}}" value="">
+                </div>
+                <!-- end way -->
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Ngày đi</label>
+                    <input class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        disabled type="text" name="" id="" placeholder="{{train.thoiGianDi}}" value="">
+                </div>
+                <!-- end Date of department -->
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Ngày về</label>
+                    <input class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        disabled type="email" name="" id="" placeholder="{{train.thoiGianVe}}" value="">
+                </div>
+                <!-- end return day -->
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Số hiệu</label>
+                    <input class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        type="tel" name="" id="" placeholder="{{train.name}}" >
+                </div>
+                <!-- end number train -->
+            </div>
+            <div>
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Loại toa</label>
+                    <input class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        type="tel" name="" id=""  placeholder="{{trainCar.name}}"
+                        >
+                </div>
+                <!-- end train car -->
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Số ghế</label>
+                    <input class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        type="tel" name="" id=""  placeholder="{{desk.name}}"
+                        >
+                </div>
+                <!-- end seat -->
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Loại vé</label>
+                    <input class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg"
+                        disabled type="tel" name="" id="" placeholder="" >
+                </div>
+                <!-- end ticket type -->
+                <div class="grid grid-cols-3 my-4">
+                    <label class="font-semibold col-span-1 text-xl text-right pr-10" for="">Giá vé</label>
+                    <input
+                        class="py-1 px-2 col-span-2 focus:outline-none border-b border-gray-500 text-center text-lg font-semibold text-red-500"
+                        disabled type="tel" name="" id="" placeholder="" >
+                </div>
+                <!-- end price -->
+            </div>
+        </form>
+    </section>
+    <section class="container mx-auto">
+        <span class="text-3xl font-semibold text-center block uppercase mt-10 mb-5">Thanh toán</span>
+        <article class="grid grid-cols-9 space-x-16 mb-10">
+            <div class="col-span-6">
+                <span class="block uppercase text-xl bg-yellow-700 text-white font-semibold p-2 rounded-t-md">khuyến
+                    cáo hành
+                    khách
+                    đi tàu</span>
+                <div class="space-y-2 px-5 border py-7">
+                    <span class="block">Thực hiện nghiêm kiểm soát dịch bệnh của Bộ Y tế, đề nghi Quý khách thưc
+                        hiện
+                        việc khai báo y tế điện tử bắt buộc trước khi đi tàu</span>
+                    <div>
+                        <span class="text-blue-400">Với khách hàng đến ga Sài Gòn cần lấy thêm mẫu xét nghiệm
+                            covid-19</span>
+                        <a href="" class="text-blue-400 hover:underline">(chi tiết)</a>
+                    </div>
+                    <span class="block font-italic">Trân trọng cảm ơn Quý hành khách!.</span>
+                </div>
+            </div>
+            <form class="my-2 col-span-3">
+                <span class="text-xl font-semibold">Phương thức thanh toán</span>
+                <div class="space-x-2">
+                    <input class="" type="radio" name="" id="">
+                    <label class="text-xl" for="">Thanh toán tại ga đi</label>
+                </div>
+                <div class="space-x-2">
+                    <input class="" type="radio" name="" id="">
+                    <label class="text-xl" for="">Thanh toán qua thẻ quốc tế</label>
+                </div>
+                <div class="space-x-2">
+                    <input class="" type="radio" name="" id="">
+                    <label class="text-xl" for="">Thanh toán qua thẻ ATM nội địa</label>
+                </div>
+                <div class="space-x-5 mt-5 text-center">
+                    <button
+                        class="bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500 border border-blue-500 ">
+                        <a routerLink='/client/information'>Trở lại</a>
+                    </button>
+                    <button (click)='addInfo()'
+                        class="bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500 border border-blue-500 ">
+                        Thanh toán
+                    </button>
+                </div>
+            </form>
+        </article>
+    </section>
+</main>

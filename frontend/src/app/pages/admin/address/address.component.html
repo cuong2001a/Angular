@@ -1,0 +1,98 @@
+<div class="flex">
+    <app-aside></app-aside>
+
+    <div class="w-full flex flex-col h-screen overflow-y-hidden">
+        <!-- Desktop Header -->
+        <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
+            <div class="w-1/2"></div>
+        </header>
+
+
+        <div class="w-full overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">Quản lí địa điểm</h1>
+                <section class="grid grid-cols-2 gap-10">
+                    <article>
+                        <div class="w-full mt-12">
+                            <button
+                                class="p-2 pl-5 mb-3 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
+                                type="button">
+                                <a routerLink="/admin/go-add">Tạo điểm đi</a>
+                            </button>
+                        </div>
+                        <div class="bg-white overflow-auto">
+                            <table class="min-w-full bg-white">
+                                <thead class="bg-gray-800 text-white">
+                                    <tr>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">#</th>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Id</th>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Điểm đi
+                                        </th>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">
+                                            Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-700">
+                                    <tr *ngFor="let item of go, let i = index">
+                                        <td class="text-center py-3 px-4">{{i + 1}}</td>
+                                        <td class="text-center py-3 px-4">{{item._id}}</td>
+                                        <td class="text-center py-3 px-4">{{item.name}}</td>
+                                        <td class="text-center py-3 px-4">
+                                            <button
+                                                class="p-2 pl-5 mx-1 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
+                                                type="button" routerLink='/admin/edit/{{item._id}}'>Sửa</button>
+                                            <button (click)="deleteGo(item._id)"
+                                                class="p-2 pl-5 mx-1 pr-5 bg-yellow-500 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300"
+                                                type="button">Xóa</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="w-full mt-12">
+                            <button
+                                class="p-2 pl-5 mb-3 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
+                                type="button">
+                                <a routerLink="/admin/arrival-add">Tạo điểm đến</a>
+                            </button>
+                        </div>
+                        <div class="bg-white overflow-auto">
+                            <table class="min-w-full bg-white">
+                                <thead class="bg-gray-800 text-white">
+                                    <tr>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">#</th>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Id</th>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Điểm đến
+                                        </th>
+                                        <th class="text-center py-3 px-4 uppercase font-semibold text-sm">
+                                            Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-700">
+                                    <tr *ngFor="let i of arrival, let item = index">
+                                        <td class="text-center py-3 px-4">{{item + 1}}</td>
+                                        <td class="text-center py-3 px-4">{{i._id}}</td>
+                                        <td class="text-center py-3 px-4">{{i.name}}</td>
+                                        <td class="text-center py-3 px-4">
+                                            <button
+                                                class="p-2 pl-5 mx-1 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
+                                                type="button" routerLink='/admin/arrival-edit/{{i._id}}'>Sửa</button>
+                                            <button (click)="deleteArrival(i._id)"
+                                                class="p-2 pl-5 mx-1 pr-5 bg-yellow-500 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300"
+                                                type="button">Xóa</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </article>
+                </section>
+            </main>
+
+            <app-footer></app-footer>
+        </div>
+
+    </div>
+</div>

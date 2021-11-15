@@ -1,0 +1,129 @@
+<app-header></app-header>
+
+<main>
+    <section class="bg-blue-700">
+        <article class="container mx-auto flex justify-center">
+            <div class="relative flex justify-center items-center text-white">
+                <div class="w-56 h-16 bg-yellow-500 relative">
+                    <div class="absolute right-201 top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-yellow-500 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute right-0 top-0 bottom-0 flex justify-center items-center">
+                    <i class="px-2 fas fa-subway"></i>
+                    <div>
+                        <div>
+                            <span class="text-base font-semibold">Hà Nội</span>
+                            <span class="px-2"><i class="fas fa-arrow-right"></i></span>
+                            <span class="text-base font-semibold">Hải Phòng</span>
+                        </div>
+                        <span class="ml-5">Lựa chọn tàu</span>
+                    </div>
+                </div>
+            </div>
+            <!-- tìm tàu -->
+            <div class="relative flex justify-center items-center ml-31 ">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="fas fa-memory pr-2"></i>
+                    <span class="text-white font-semibold">Lựa chọn toa tàu</span>
+                </div>
+            </div>
+            <!-- tìm toa -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <!-- <i class="fas fa-chair pr-2"></i> -->
+                    <i class="material-icons pr-2">airline_seat_recline_normal</i>
+                    <span class="font-semibold">Lựa chọn chỗ ngồi</span>
+                </div>
+            </div>
+            <!-- tìm ghế -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="fas fa-user-lock pr-2"></i>
+                    <span class="font-semibold">Thông tin khách hàng</span>
+                </div>
+            </div>
+            <!-- thông tin khách hàng -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="far fa-credit-card pr-2"></i>
+                    <span class="font-semibold">Thanh toán</span>
+                </div>
+            </div>
+            <!-- Hoàn thành -->
+        </article>
+    </section>
+    <section class="text-white mt-10 container mx-auto flex justify-between">
+        <!-- <article class="bg-blue-700 w-[530px] py-1 px-2 text-xl">
+            <span>Chiều đi: ngày </span>
+            <span>05/07/2021 từ </span>
+            <span>Hà Nội - Sài Gòn</span>
+        </article> -->
+        <article>
+            <button><a routerLink='/client'
+                    class="bg-blue-600 text-white py-2 px-8 text-xl rounded-md border border-blue-600 hover:bg-white hover:text-blue-600">Đổi
+                    tìm
+                    kiếm</a></button>
+        </article>
+    </section>
+
+    <form class="my-10 container mx-auto space-y-6 border p-5">
+        <article *ngFor="let i of data.list" class="grid grid-cols-7 gap-5 border p-5 shadow-lg rounded-md">
+            <span class="col-span-1 font-semibold block my-auto mx-auto">{{i.name}}</span>
+            <div class="col-span-3">
+                <div class="flex justify-between">
+                    <div class="space-x-2 text-lg">
+                        <span>{{i.thoiGianDi| date}}</span>
+                    </div>
+                    <i class="material-icons">subway</i>
+                    <div class="space-x-2 text-lg">
+                        <span>{{i.thoiGianVe| date}}</span>
+                    </div>
+                </div>
+                <p class="text-black text-opacity-50 border-dashed w-full border my-2"></p>
+                <div class="flex justify-between">
+                    <span class="font-semibold text-xl">{{i.addressArrival.name}}</span>
+            
+                    <span class="font-semibold text-xl">{{i.addressGo.name}}</span>
+                </div>
+            </div>
+            <!-- <div class="mx-auto text-center space-y-4">
+                <span class="block font-semibold text-xl">Loại vé</span>
+                <span class="block text-xl">{{i.typeTicket.name}}</span>
+                <span class="block text-xl">{{i.typeTicket.price}}đ</span>
+
+
+            </div>
+            <div class="mx-auto text-center space-y-3">
+                <span class="block font-semibold text-xl">Loại chuyến đi</span>
+                <span class="block text-xl">{{i.typeTrip.name}}</span>
+
+            </div> -->
+            <button routerLink='/client/car/{{i._id}}'><a class="px-10 py-2 bg-red-500 rounded-md text-white text-xl" >Đặt
+                    vé</a></button>
+        </article>
+        <!-- item -->
+    </form>
+</main>

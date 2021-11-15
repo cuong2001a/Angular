@@ -1,0 +1,123 @@
+<app-header></app-header>
+<main class="backgroundPlaceManager py-10">
+    <section class="container mx-auto p-10 border bg-white rounded-md w-[1050px] bg-opacity-50">
+        <span class="block uppercase text-3xl text-center font-semibold">Thông tin đặt chỗ của quý khách</span>
+        <ul class="my-5 space-y-2">
+            <li>
+                <article class="text-lg py-2 bg-gray-50 flex items-center space-x-2 rounded-full cursor-pointer">
+                    <span class="pl-5"><i class="fas fa-chevron-circle-down text-yellow-500"></i></span>
+                    <span class="uppercase">các lựa chọn cho chuyến tàu</span>
+                </article>
+                <article class="ml-10">
+                    <ul class="space-x-5 my-5">
+                        <li
+                            class="bg-gray-50 px-10 py-1 rounded-full text-black inline-block hover:bg-blue-900 hover:text-white">
+                            Số vé điện tử</li>
+                        <li class="bg-blue-900 px-10 py-1 rounded-full text-white inline-block">Mã đặt chỗ</li>
+                        <li
+                            class="bg-gray-50 px-10 py-1 rounded-full text-black inline-block hover:bg-blue-900 hover:text-white">
+                            Tài khoản hội viên</li>
+                    </ul>
+                    <app-search (data)='listData($event)'></app-search>
+                    <div *ngIf='isShowHide == true'>
+                        {{data.nameUser}}
+                        <div class="text-center border mx-48 py-5 my-3 rounded-md shadow-md border-gray-200 bg-white">
+                            <span class="block text-3xl font-semibold text-center uppercase mb-2">Thông tin vé tàu</span>
+                            <div class="grid grid-cols-2 px-5">
+                                <div class="text-left space-y-1">
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Tên tàu</span>
+                                        <span class="block">{{data.train.name}}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Tên toa tàu</span>
+                                        <span class="block">{{data.traiCar.name}}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Số ghế</span>
+                                        <span class="block">{{data.desk.name}}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Số lượng vé</span>
+                                        <span class="block">{{data.people}}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Code</span>
+                                        <span class="block">{{data.code}}</span>
+                                    </div>
+                                </div>
+                                <div class="text-left space-y-1">
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Tên </span>
+                                        <span class="block">{{data.nameUser}}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Chứng minh nhân dân</span>
+                                        <span class="block">{{data.cmnd}}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Số điện thoại</span>
+                                        <span class="block">{{data.phoneNumber}}</span>
+                                    </div>
+                                    <div class="grid grid-cols-2 space-x-5">
+                                        <span class="block font-semibold text-right">Email</span>
+                                        <span class="block">{{data.email}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 ">
+                        <span class="block text-black font-semibold text-xl">Quý khách có thể xem thông tin và điều
+                            chỉnh
+                            các
+                            tùy chọn cho chuyến tàu của
+                            mình:</span>
+                        <ul class="flex items-center my-2 text-lg py-2">
+                            <li class="border-r border-white pr-8 hover:text-blue-600"><a href=""><i
+                                        class="fas fa-chair pr-2 text-blue-600"></i>Chọn chỗ
+                                    ngồi</a></li>
+                            <li class="border-r border-white px-8 hover:text-blue-600"><a href=""><i
+                                        class="fas fa-plus-circle pr-2 text-blue-600"></i>Thêm
+                                    dịch vụ bổ
+                                    trợ</a></li>
+                            <li class="border-r border-white px-8 hover:text-blue-600"><a href=""><i
+                                        class="fas fa-ship pr-2 text-blue-600"></i>Nâng cấp
+                                    hạng
+                                    dịch
+                                    vụ</a></li>
+                            <li class="pl-8 hover:text-blue-600"><a href=""><i
+                                        class="fas fa-exchange-alt pr-2 text-blue-600"></i>Thay
+                                    đổi chuyến
+                                    tàu</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article class="text-lg py-2 bg-gray-50 flex items-center space-x-2 rounded-full cursor-pointer">
+                    <span class="pl-5"><i class="fas fa-chevron-circle-down text-yellow-500"></i></span>
+                    <span class="uppercase">thanh toán mã đặtc hỗ trả sau</span>
+                </article>
+            </li>
+            <li>
+                <article class="text-lg py-2 bg-gray-50 flex items-center space-x-2 rounded-full cursor-pointer">
+                    <span class="pl-5"><i class="fas fa-chevron-circle-down text-yellow-500"></i></span>
+                    <span class="uppercase">Hoàn vé</span>
+                </article>
+            </li>
+            <li>
+                <article class="text-lg py-2 bg-gray-50 flex items-center space-x-2 rounded-full cursor-pointer">
+                    <span class="pl-5"><i class="fas fa-chevron-circle-down text-yellow-500"></i></span>
+                    <span class="uppercase">Xuất hóa đơn GTGT điện tử</span>
+                </article>
+            </li>
+            <li>
+                <article class="text-lg py-2 bg-gray-50 flex items-center space-x-2 rounded-full cursor-pointer">
+                    <span class="pl-5"><i class="fas fa-chevron-circle-down text-yellow-500"></i></span>
+                    <span class="uppercase">Hủy đặt chỗ</span>
+                </article>
+            </li>
+        </ul>
+    </section>
+</main>

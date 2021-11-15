@@ -1,0 +1,71 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm"
+class="grid grid-cols-3 container mx-auto shadow-xl rounded-md py-5 px-10 absolute left-0 right-0 bottom-0 -mb-16 bg-white z-[80]">
+<section class="space-y-2 mx-auto col-span-1">
+    <div>
+        <label for="diemDi" class="block text-gray-500 my-2"><i class="fas fa-map-marker-alt px-2"></i>Điểm
+            đi</label>
+        <select name="" id="diemDi" class="border rounded-md w-260 py-1 px-2"
+            formControlName="addressArrival">
+            <option *ngFor="let i of arrival" value="{{i._id}}">{{i.name}}</option>
+        </select>
+        <div *ngIf="submitted && f.checkWay1.errors" class="text-red-500 block py-2">
+            <span *ngIf="f.checkWay1.errors?.required" class="text-red-500 block py-2">Bạn chưa
+                chọn chiều đi</span>
+        </div>
+    </div>
+    <div>
+        <label for="ngayDi" class="block text-gray-500 my-2"><i class="fas fa-calendar-alt px-2"></i>Ngày
+            đi</label>
+        <input class="border rounded-md w-260 py-1 px-2" type="date" formControlName="thoiGianDi">
+        <div *ngIf="submitted && f.checkTicket1.errors">
+            <span *ngIf="f.checkTicket1.errors?.required" class="text-red-500 block py-2">Bạn chưa
+                chọn ngày
+                về</span>
+        </div>
+    </div>
+</section>
+<section class="col-span-2">
+    <article class="grid grid-cols-2">
+        <div class="space-y-2 mx-auto">
+            <div>
+                <label for="diemDi" class="block text-gray-500 my-2"><i
+                        class="fas fa-map-marker-alt px-2"></i>Điểm
+                    đến</label>
+                <select name="" id="diemDi" class="border rounded-md w-260 py-1 px-2"
+                    formControlName="addressGo">
+                    <option *ngFor="let i of go" value="{{i._id}}">{{i.name}}</option>
+                </select>
+                <div *ngIf="submitted && f.checkWay2.errors" class="text-red-500 block py-2">
+                    <span *ngIf="f.checkWay2.errors?.required" class="text-red-500 block py-2">Bạn chưa
+                        chọn chiều đi</span>
+                </div>
+            </div>
+            <div *ngIf="ReadMore">
+                <label for="ngayDen" class="block text-gray-500 my-2"><i
+                        class="fas fa-calendar-alt px-2"></i>Ngày
+                    về</label>
+                <input class="border rounded-md w-260 py-1 px-2" type="date" formControlName="thoiGianVe">
+                <div *ngIf="submitted && f.checkTicket2.errors">
+                    <span *ngIf="f.checkTicket2.errors?.required" class="text-red-500 block py-2">Bạn chưa
+                        chọn ngày
+                        đi</span>
+                </div>
+            </div>
+            <div *ngIf="visible"></div>
+        </div>
+        <div class="space-y-12 mx-auto">
+            <div>
+                <span class="block text-gray-500 my-2">Loại vé</span>
+                <div class="flex space-x-5" *ngFor='let i of typeTrip'>
+                    <input type="radio" value="{{i._id}}" name="typeTrip" checked
+                        formControlName="typeTrip">
+                    <span>{{i.name}}</span>
+                </div>
+            </div>
+            <button 
+                class="bg-blue-500 text-white px-10 rounded-md w-64 py-1 hover:bg-white hover:text-blue-500 border border-blue-500"><a>Tìm
+                    kiếm</a></button>
+        </div>
+    </article>
+</section>
+</form>

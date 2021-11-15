@@ -1,0 +1,190 @@
+<app-header></app-header>
+<main>
+    <section class="bg-blue-700">
+        <article class="container mx-auto flex justify-center">
+            <div class="relative flex justify-center items-center text-white">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div class="absolute right-201 top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute right-0 top-0 bottom-0 flex justify-center items-center">
+                    <i class="px-2 fas fa-subway"></i>
+                    <div>
+                        <div>
+                            <span class="text-base font-semibold">Hà Nội</span>
+                            <span class="px-2"><i class="fas fa-arrow-right"></i></span>
+                            <span class="text-base font-semibold">Hải Phòng</span>
+                        </div>
+                        <span class="ml-5">Lựa chọn tàu</span>
+                    </div>
+                </div>
+            </div>
+            <!-- tìm tàu -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-yellow-500 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-yellow-500 transform rotate-45">
+                    </div>
+                    <div
+                        class="absolute top-0 -left-8 h-8 w-8 border-16 border-yellow-500 border-b-transparent border-l-transparent transform rotate-0">
+                    </div>
+                    <div
+                        class="absolute bottom-0 -left-8 h-8 w-8 border-16 border-yellow-500 border-b-transparent border-l-transparent transform rotate-90">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="fas fa-memory pr-2"></i>
+                    <span class="text-white font-semibold">Lựa chọn Loại toa</span>
+                </div>
+            </div>
+            <!-- tìm toa -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="material-icons pr-2">airline_seat_recline_normal</i>
+                    <span class="font-semibold">Lựa chọn chỗ ngồi</span>
+                </div>
+            </div>
+            <!-- tìm ghế -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="fas fa-user-lock pr-2"></i>
+                    <span class="font-semibold">Thông tin khách hàng</span>
+                </div>
+            </div>
+            <!-- thông tin khách hàng -->
+            <div class="relative flex justify-center items-center ml-31">
+                <div class="w-56 h-16 bg-blue-700 relative">
+                    <div
+                        class="absolute left-201 border-t border-r top-0 bottom-0 my-auto h-45 w-45 bg-blue-700 transform rotate-45">
+                    </div>
+                </div>
+                <div class="absolute top-0 bottom-0 flex justify-center items-center text-white font-semibold">
+                    <i class="far fa-credit-card pr-2"></i>
+                    <span class="font-semibold">Thanh toán</span>
+                </div>
+            </div>
+            <!-- Hoàn thành -->
+        </article>
+    </section>
+    <section class="grid grid-cols-12 space-x-3 container mx-auto my-10">
+        <article class="col-span-3">
+            <form action="" class=" border relative overflow-hidden bg-fixed">
+                <img class="w-96 h-[360px] opacity-30"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7-_h5oFnFrvWOHqK4BNggZCMP_I78Uj-Fhg&usqp=CAU"
+                    alt="">
+                
+                <div   class="absolute top-0 bottom-0 left-0 right-0 p-10 space-y-2">
+                    <span class="text-3xl font-semibold text-center block uppercase">Thông tin vé</span>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-right" for="">Chặng:</label>
+                        <span class="col-span-3">{{dataTrain.addressArrival.name}} -{{dataTrain.addressGo.name}} </span>
+                    </div>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-right" for="">Ngày đi:</label>
+                        <span class="col-span-3">{{dataTrain.thoiGianDi}}</span>
+                    </div>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-right" for="">Ngày về:</label>
+                        <span class="col-span-3">{{dataTrain.thoiGianVe}}</span>
+                    </div>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-right" for="">Số hiệu:</label>
+                        <span class="col-span-3">{{dataTrain.name}}</span>
+                    </div>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-right" for="">Loại vé:</label>
+                        <span class="col-span-3">Khứ hồi</span>
+                    </div>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-right" for="">Số người:</label>
+                        <span class="col-span-3">1</span>
+                    </div>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-right" for="">Giá vé:</label>
+                        <p class="col-span-3"><span class="bg-red-500 text-white px-2">500.000</span> ₫/khách</p>
+                    </div>
+                </div>
+            </form>
+        </article>
+        <article class="col-span-1"></article>
+        <form class="col-span-8">
+            <span class="text-3xl font-semibold text-center block uppercase">Lựa chọn Loại toa</span>
+            <article class="grid grid-cols-7 my-10">
+                <div *ngFor="let i of dataTrainCar.list"  class="group cursor-pointer">
+                    <div (click)="chooseTrainCar(i._id)" class="transform group-hover:-translate-y-5 translate-y-0 duration-1000">
+                        <img src="https://i.ibb.co/HN6Tfk1/toaTau.png" alt="">
+                        <div class="block text-lg mt-3 text-center font-semibold space-x-0.5">
+                            <span>{{i.name}}</span>
+                        </div>
+                    </div>
+                </div>
+                <img class="" src="https://i.ibb.co/ykxCXPQ/dauTau.png" alt="">
+            </article>
+            <article class="text-center border mx-48 py-5 rounded-md shadow-md border-gray-200">
+                <span class="block text-3xl font-semibold text-center uppercase mb-2">Thông tin toa</span>
+                <div class="grid grid-cols-2 px-5">
+                    <div class="text-left space-y-1">
+                        <div class="grid grid-cols-2 space-x-5">
+                            <span class="block font-semibold text-right">Giường nắm:</span>
+                            <span class="block">Toa 1 - 2</span>
+                        </div>
+                        <div class="grid grid-cols-2 space-x-5">
+                            <span class="block font-semibold text-right">Ghế mền:</span>
+                            <span class="block">Toa 3 - 4</span>
+                        </div>
+                        <div class="grid grid-cols-2 space-x-5">
+                            <span class="block font-semibold text-right">Ghế cứng:</span>
+                            <span class="block">Toa 5 - 6</span>
+                        </div>
+                    </div>
+                    <div class="text-left space-y-1">
+                        <div class="grid grid-cols-2 space-x-5">
+                            <span class="block font-semibold text-right">Giường nắm:</span>
+                            <span class="block">500.000 ₫/khách</span>
+                        </div>
+                        <div class="grid grid-cols-2 space-x-5">
+                            <span class="block font-semibold text-right">Ghế mền:</span>
+                            <span class="block">400.000 ₫/khách</span>
+                        </div>
+                        <div class="grid grid-cols-2 space-x-5">
+                            <span class="block font-semibold text-right">Ghế cứng:</span>
+                            <span class="block">300.000 ₫/khách</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="text-lg font-semibold space-x-2 my-5">
+                <span>Chọn toa:</span>
+                <span>{{hintTrainCarChoose.name}}</span>
+            </article>
+            <article class="text-lg space-x-2 text-red-500">
+                <span class="text-red-500">*</span>
+                <span>Giá vé ở phần thông tin vé đã được được tính theo số lượng người quý khách đã đắng ký đặt
+                    vé</span>
+            </article>
+            <article class="space-x-5 mt-10 text-center">
+                <button
+                    class="bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500 border border-blue-500 ">
+                    <a routerLink='/client/train'>Trở lại</a>
+                </button>
+                <button class=" bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500
+                        border border-blue-500 ">
+                    <a routerLink='/client/seat/{{hintTrainCarChoose._id}}'>Tiếp tục</a>
+                </button>
+            </article>
+        </form>
+    </section>
+</main>

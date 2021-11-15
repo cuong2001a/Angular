@@ -1,0 +1,56 @@
+<div class="flex">
+    <app-aside></app-aside>
+
+    <div class="w-full flex flex-col h-screen overflow-y-hidden">
+        <!-- Desktop Header -->
+        <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
+            <div class="w-1/2"></div>
+        </header>
+        <div class="w-full overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">Thêm toa tàu</h1>
+                <div class="w-full mt-12">
+                    <div class="bg-white overflow-auto">
+                        <form [formGroup]="trainCarForm" (ngSubmit)="save()" class="mt-6">
+                            <div class="flex justify-between gap-3">
+                                <span class="w-1/2">
+                                    <label class="block text-xs font-semibold text-gray-600 uppercase">Tên toa</label>
+                                    <input type="text" formControlName="name" name="firstname" placeholder="Toa"
+                                        autocomplete="given-name"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+                                        required />
+                                    <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)">
+                                        <span class="text-red-500" *ngIf="f.name.errors?.required">Trường này không được
+                                            trống!</span>
+                                    </div>
+                                </span>
+                                <span class="w-1/2">
+                                    <label for="lastname"
+                                        class="block text-xs font-semibold text-gray-600 uppercase">Tên tàu</label>
+                                    <select name="" id="" formControlName="train"
+                                        class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 ">
+                                        <option *ngFor="let i of train" value="{{i._id}}">{{i.name}}</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="space-x-10">
+                                <button [disabled]="!trainCarForm.valid" type="submit"
+                                    class="disabled:bg-opacity-50 active:bg-black w-48 rounded-md py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                    Tạo
+                                </button>
+                                <button
+                                    class="w-48 rounded-md py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none"><a
+                                        routerLink="/admin/trainCar">Trở
+                                        lại</a>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+
+            <app-footer></app-footer>
+        </div>
+
+    </div>
+</div>

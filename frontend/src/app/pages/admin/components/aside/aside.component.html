@@ -1,0 +1,41 @@
+<aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+    <div class="p-6">
+        <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+        <button
+            class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+            <i class="fas fa-subway mr-3"></i> Travellink
+        </button>
+    </div>
+    <nav class="text-white text-base font-semibold pt-3">
+        <a routerLinkActive="select" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/admin/address']"
+            class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item active:bg-blue-600">
+            <i class="fas fa-tachometer-alt mr-3"></i>
+            Quản lí địa điểm
+        </a>
+        <a [routerLink]="['/admin/train']"
+            class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <i class="fas fa-tachometer-alt mr-3"></i>
+            Quản lí tàu
+        </a>
+        <a [routerLink]="['/admin/trainCar']"
+            class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <i class="fas fa-sticky-note mr-3"></i>
+            Quản lí toa tàu
+        </a>
+        <a [routerLink]="['/admin/desk']"
+            class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <i class="fas fa-table mr-3"></i>
+            Quản lí chỗ ngồi
+        </a>
+        <a [routerLink]="['/admin/type-ticket']"
+            class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <i class="fas fa-align-left mr-3"></i>
+            Quản lí thông tin vé
+        </a>
+        <a [routerLink]="['/admin/type-trip']"
+            class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <i class="fas fa-align-left mr-3"></i>
+            Quản lí loại chuyến đi
+        </a>
+    </nav>
+</aside>

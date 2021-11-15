@@ -1,0 +1,536 @@
+<app-header></app-header>
+<main>
+    <section class="relative mb-40">
+        <!-- <img class="w-screen h-[500px] object-cover" src="http://vetau.com.vn/images/001.jpg" alt=""> -->
+        <app-banner></app-banner>
+       <app-form-search ></app-form-search>
+    </section>
+    <!-- end form check ticket -->
+    <section class="container mx-auto">
+        <span class="block text-4xl text-center uppercase">_ Ưu đãi đặc biệt _</span>
+        <span class="block text-gray-500 py-5 w-[500px] text-center mx-auto">Chúng tôi luôn cập nhật những ưu đãi
+            mới nhất
+            phù hợp với
+            bạn. Thoả
+            sức vi
+            vu đến các địa điểm nổi
+            tiếng khắp Việt Nam.</span>
+        <article>
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide>
+                    <div class="relative group">
+                        <a class="" href="#">
+                            <div class="overflow-hidden rounded-md border border-white">
+                                <img class="transition duration-300 transform group-hover:scale-105 w-450 h-300"
+                                    src="http://www.vantaiduongsathanoi.vn/store/uploads/2021/03/nganh-duong-sat-viet-nam-no-luc-doi-moi-de-phat-trien.jpg"
+                                    alt="">
+                            </div>
+                            <!-- <img class="absolute top-0 right-0 object-fill" src="../assets/img/hot-travel-small.png"
+                                alt="" style="height: 100px; width: 150px;"> -->
+                            <div
+                                class="absolute left-0 right-0 bottom-0 mx-px mb-5 flex justify-center items-center uppercase text-white shadow-lg bg-black bg-opacity-50 hover:text-blue-400">
+                                <div class="text-center py-5">
+                                    <div class="font-semibold">
+                                        <span class="divide-y divide-white">Hà Nội</span>
+                                        <i class="fas fa-subway px-5"></i>
+                                        <span>Sài Gòn</span>
+                                    </div>
+                                    <span class="mr-3 line-through text-gray-500 text-lg">1.150.000 ₫/khách</span>
+                                    <span class="text-xl font-bold text-red-400">850.000 ₫/khách</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="relative group">
+                        <a class="" href="#">
+                            <div class="overflow-hidden rounded-md border border-white">
+                                <img class="transition duration-300 transform group-hover:scale-105 w-450 h-300"
+                                    src="https://media.kinhtedothi.vn//2019/11/01/nhinhientaingamtuonglai.jpg" alt="">
+                            </div>
+                            <!-- <img class="absolute top-0 right-0 object-fill" src="../assets/img/hot-travel-small.png"
+                                alt="" style="height: 100px; width: 150px;"> -->
+                            <div
+                                class="absolute left-0 right-0 bottom-0 mx-px mb-5 flex justify-center items-center uppercase text-white shadow-lg bg-black bg-opacity-50 hover:text-blue-400">
+                                <div class="text-center py-5">
+                                    <div class="font-semibold">
+                                        <span class="divide-y divide-white">Hà Nội</span>
+                                        <i class="fas fa-subway px-5"></i>
+                                        <span>Hải Phòng</span>
+                                    </div>
+                                    <span class="text-xl font-bold text-red-400">850.000 ₫/khách</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="relative group">
+                        <a class="" href="#">
+                            <div class="overflow-hidden rounded-md border border-white">
+                                <img class="transition duration-300 transform group-hover:scale-105 w-450 h-300"
+                                    src="https://dulichvietnam.com.vn/vnt_upload/File/Image/nhung_cung_duong_sat_dep_nhat_viet_nam_2.jpg"
+                                    alt="">
+                            </div>
+                            <!-- <img class="absolute top-0 right-0 object-fill" src="../assets/img/hot-travel-small.png"
+                                alt="" style="height: 100px; width: 150px;"> -->
+                            <div
+                                class="absolute left-0 right-0 bottom-0 mx-px mb-5 flex justify-center items-center uppercase text-white shadow-lg bg-black bg-opacity-50 hover:text-blue-400">
+                                <div class="text-center py-5">
+                                    <div class="font-semibold">
+                                        <span class="divide-y divide-white">Hà Nội</span>
+                                        <i class="fas fa-subway px-5"></i>
+                                        <span>SaPa</span>
+                                    </div>
+                                    <span class="text-xl font-bold text-red-400">850.000 ₫/khách</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </article>
+    </section>
+    <!-- end ưu đãi -->
+    <section class="container mx-auto my-20">
+        <span class="block text-4xl text-center uppercase">_ Chuyến tàu giá tốt _</span>
+        <ul class="flex justify-center py-5">
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 bg-yellow-400"><a href="">Hà
+                    Nội</a></li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Hồ Chí Minh</a>
+            </li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Hải Phòng</a>
+            </li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Huế</a></li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Đà Nẵng</a></li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Vinh</a></li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Thanh Hóa</a>
+            </li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Cần Thơ</a></li>
+            <li class="px-7 py-1 border border-gray-300 mx-1 text-sm hover:bg-gray-400 "><a href="">Cà Mau</a></li>
+        </ul>
+        <article class="grid grid-cols-3 gap-10">
+            <div class="relative">
+                <img src="https://i.ibb.co/LZgsZ3G/Creative-Train-Ticket-Concept-Design-Modern-Train-Ticket.jpg" alt="">
+                <img class="absolute top-0 bottom-0 left-0 w-28 h-14 mt-10 ml-5"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/%C4%90svn.png/200px-%C4%90svn.png"
+                    alt="">
+                <div class="text-xl font-bold absolute top-0 right-0 text-red-400 mr-8 mt-14">
+                    <span>Giá vé:</span>
+                    <span class="pl-2">850.000 ₫/khách</span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 px-10 mb-10">
+                    <div class="grid grid-cols-2 ">
+                        <div>
+                            <span class="font-semibold pl-1">Loại vé:</span>
+                            <span class="pl-2">Một chiều</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Ngày đi:</span>
+                            <span class="pl-2">20.11.2021</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Kiểu ghế:</span>
+                            <span class="pl-2">Giường nằm</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Giờ đi:</span>
+                            <span class="pl-2">8:00</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 mt-2">
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Hà Nội</span>
+                        </div>
+                        <div class="flex justify-center items-center col-span-5 px-10">
+                            <span class="divide-y w-full border my-5 block relative">
+                                <i class="fas fa-subway absolute left-0 top-0 -mt-5 -ml-2 text-red-300"></i>
+                                <i class="fas fa-map-marker-alt absolute right-0 top-0 -mt-5 -mr-2 text-red-300"></i>
+                            </span>
+                        </div>
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Sài Gòn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- item1 -->
+            <div class="relative">
+                <img src="https://i.ibb.co/LZgsZ3G/Creative-Train-Ticket-Concept-Design-Modern-Train-Ticket.jpg" alt="">
+                <img class="absolute top-0 bottom-0 left-0 w-28 h-14 mt-10 ml-5"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/%C4%90svn.png/200px-%C4%90svn.png"
+                    alt="">
+                <div class="text-xl font-bold absolute top-0 right-0 text-red-400 mr-8 mt-14">
+                    <span>Giá vé:</span>
+                    <span class="pl-2">850.000 ₫/khách</span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 px-10 mb-10">
+                    <div class="grid grid-cols-2 ">
+                        <div>
+                            <span class="font-semibold pl-1">Loại vé:</span>
+                            <span class="pl-2">Một chiều</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Ngày đi:</span>
+                            <span class="pl-2">20.11.2021</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Kiểu ghế:</span>
+                            <span class="pl-2">Giường nằm</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Giờ đi:</span>
+                            <span class="pl-2">8:00</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 mt-2">
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Hà Nội</span>
+                        </div>
+                        <div class="flex justify-center items-center col-span-5 px-10">
+                            <span class="divide-y w-full border my-5 block relative">
+                                <i class="fas fa-subway absolute left-0 top-0 -mt-5 -ml-2 text-red-300"></i>
+                                <i class="fas fa-map-marker-alt absolute right-0 top-0 -mt-5 -mr-2 text-red-300"></i>
+                            </span>
+                        </div>
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Sài Gòn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://i.ibb.co/LZgsZ3G/Creative-Train-Ticket-Concept-Design-Modern-Train-Ticket.jpg" alt="">
+                <img class="absolute top-0 bottom-0 left-0 w-28 h-14 mt-10 ml-5"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/%C4%90svn.png/200px-%C4%90svn.png"
+                    alt="">
+                <div class="text-xl font-bold absolute top-0 right-0 text-red-400 mr-8 mt-14">
+                    <span>Giá vé:</span>
+                    <span class="pl-2">850.000 ₫/khách</span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 px-10 mb-10">
+                    <div class="grid grid-cols-2 ">
+                        <div>
+                            <span class="font-semibold pl-1">Loại vé:</span>
+                            <span class="pl-2">Một chiều</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Ngày đi:</span>
+                            <span class="pl-2">20.11.2021</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Kiểu ghế:</span>
+                            <span class="pl-2">Giường nằm</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Giờ đi:</span>
+                            <span class="pl-2">8:00</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 mt-2">
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Hà Nội</span>
+                        </div>
+                        <div class="flex justify-center items-center col-span-5 px-10">
+                            <span class="divide-y w-full border my-5 block relative">
+                                <i class="fas fa-subway absolute left-0 top-0 -mt-5 -ml-2 text-red-300"></i>
+                                <i class="fas fa-map-marker-alt absolute right-0 top-0 -mt-5 -mr-2 text-red-300"></i>
+                            </span>
+                        </div>
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Sài Gòn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://i.ibb.co/LZgsZ3G/Creative-Train-Ticket-Concept-Design-Modern-Train-Ticket.jpg" alt="">
+                <img class="absolute top-0 bottom-0 left-0 w-28 h-14 mt-10 ml-5"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/%C4%90svn.png/200px-%C4%90svn.png"
+                    alt="">
+                <div class="text-xl font-bold absolute top-0 right-0 text-red-400 mr-8 mt-14">
+                    <span>Giá vé:</span>
+                    <span class="pl-2">850.000 ₫/khách</span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 px-10 mb-10">
+                    <div class="grid grid-cols-2 ">
+                        <div>
+                            <span class="font-semibold pl-1">Loại vé:</span>
+                            <span class="pl-2">Một chiều</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Ngày đi:</span>
+                            <span class="pl-2">20.11.2021</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Kiểu ghế:</span>
+                            <span class="pl-2">Giường nằm</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Giờ đi:</span>
+                            <span class="pl-2">8:00</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 mt-2">
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Hà Nội</span>
+                        </div>
+                        <div class="flex justify-center items-center col-span-5 px-10">
+                            <span class="divide-y w-full border my-5 block relative">
+                                <i class="fas fa-subway absolute left-0 top-0 -mt-5 -ml-2 text-red-300"></i>
+                                <i class="fas fa-map-marker-alt absolute right-0 top-0 -mt-5 -mr-2 text-red-300"></i>
+                            </span>
+                        </div>
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Sài Gòn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://i.ibb.co/LZgsZ3G/Creative-Train-Ticket-Concept-Design-Modern-Train-Ticket.jpg" alt="">
+                <img class="absolute top-0 bottom-0 left-0 w-28 h-14 mt-10 ml-5"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/%C4%90svn.png/200px-%C4%90svn.png"
+                    alt="">
+                <div class="text-xl font-bold absolute top-0 right-0 text-red-400 mr-8 mt-14">
+                    <span>Giá vé:</span>
+                    <span class="pl-2">850.000 ₫/khách</span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 px-10 mb-10">
+                    <div class="grid grid-cols-2 ">
+                        <div>
+                            <span class="font-semibold pl-1">Loại vé:</span>
+                            <span class="pl-2">Một chiều</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Ngày đi:</span>
+                            <span class="pl-2">20.11.2021</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Kiểu ghế:</span>
+                            <span class="pl-2">Giường nằm</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Giờ đi:</span>
+                            <span class="pl-2">8:00</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 mt-2">
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Hà Nội</span>
+                        </div>
+                        <div class="flex justify-center items-center col-span-5 px-10">
+                            <span class="divide-y w-full border my-5 block relative">
+                                <i class="fas fa-subway absolute left-0 top-0 -mt-5 -ml-2 text-red-300"></i>
+                                <i class="fas fa-map-marker-alt absolute right-0 top-0 -mt-5 -mr-2 text-red-300"></i>
+                            </span>
+                        </div>
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Sài Gòn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="https://i.ibb.co/LZgsZ3G/Creative-Train-Ticket-Concept-Design-Modern-Train-Ticket.jpg" alt="">
+                <img class="absolute top-0 bottom-0 left-0 w-28 h-14 mt-10 ml-5"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/%C4%90svn.png/200px-%C4%90svn.png"
+                    alt="">
+                <div class="text-xl font-bold absolute top-0 right-0 text-red-400 mr-8 mt-14">
+                    <span>Giá vé:</span>
+                    <span class="pl-2">850.000 ₫/khách</span>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 px-10 mb-10">
+                    <div class="grid grid-cols-2 ">
+                        <div>
+                            <span class="font-semibold pl-1">Loại vé:</span>
+                            <span class="pl-2">Một chiều</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Ngày đi:</span>
+                            <span class="pl-2">20.11.2021</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Kiểu ghế:</span>
+                            <span class="pl-2">Giường nằm</span>
+                        </div>
+                        <div>
+                            <span class="font-semibold pl-1">Giờ đi:</span>
+                            <span class="pl-2">8:00</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 mt-2">
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Hà Nội</span>
+                        </div>
+                        <div class="flex justify-center items-center col-span-5 px-10">
+                            <span class="divide-y w-full border my-5 block relative">
+                                <i class="fas fa-subway absolute left-0 top-0 -mt-5 -ml-2 text-red-300"></i>
+                                <i class="fas fa-map-marker-alt absolute right-0 top-0 -mt-5 -mr-2 text-red-300"></i>
+                            </span>
+                        </div>
+                        <div class="col-span-1 text-center font-semibold">
+                            <!-- <span class="block">8:00</span> -->
+                            <span class="block">Sài Gòn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- end Chuyến tàu giá tốt -->
+    <section class="container mx-auto my-16 text-center">
+        <div class="">
+            <h3 class="font-bold text-2xl uppercase">_ lý do chọn Travellink _</h3>
+            <img class="w-20 mx-auto" src="https://i.ibb.co/VgsQmk7/gachvang.png" alt="">
+        </div>
+        <div class="grid grid-cols-3 mx-24 gap-36 mt-10">
+            <div>
+                <img class="px-28" src="https://i.ibb.co/qNtSLk0/hotel.png" alt="">
+                <h3 class="font-bold text-xl py-5">Tour được chọn lựa</h3>
+                <p>Để mọi người - mọi nhà đều có thể đi du lịch với chất lượng tour hợp lý nhất.
+                </p>
+            </div>
+            <div>
+                <img class="px-28" src="https://i.ibb.co/qpKKPkt/customer-service.pngcustomer-service.png" alt="">
+                <h3 class="font-bold text-xl py-5">Hỗ trợ 24/7</h3>
+                <p>Để mọi người - mọi nhà đều có thể đi du lịch với hỗ trợ tốt nhất.
+                </p>
+            </div>
+            <div>
+                <img class="px-28" src="https://i.ibb.co/n7MmLQK/best-price.pngbest-price.png" alt="">
+                <h3 class="font-bold text-xl py-5">Giá luôn tốt nhất</h3>
+                <p>Để mọi người - mọi nhà đều có thể đi du lịch với giá thành hợp lý nhất.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- end lý do chọn Travellink -->
+    <section class="background bg-cover bg-center bg-fixed bg-no-repeat py-10 my-20">
+        <div class="text-center">
+            <p class="mx-150 py-2 text-white">Sự hài lòng của khách hàng làm niềm vui của chúng tôi</p>
+            <div class="py-5">
+                <h3 class="font-bold text-2xl uppercase text-white">_ thành quả của TRAVELINK _</h3>
+                <img class="w-20 mx-225 pt-3" src="../assets/img/gachtrang.png" alt="">
+            </div>
+        </div>
+        <div class="grid grid-cols-4 container mx-auto px-28 gap-10">
+            <div>
+                <img class="px-28 h-20" src="https://i.ibb.co/RTRDVhv/train.png" alt="">
+                <div class="text-center">
+                    <h3 class="font-bold text-4xl text-yellow-400 py-5">20,549+</h3>
+                    <p class="text-white text-xl">Chuyến hoàn thành</p>
+                </div>
+            </div>
+            <div>
+                <img class="px-28" src="https://i.ibb.co/TWx5nkr/guest.pngguest.png" alt="">
+                <div class="text-center">
+                    <h3 class="font-bold text-4xl text-yellow-400 py-5">60,419+</h3>
+                    <p class="text-white text-xl">Khách hàng</p>
+                </div>
+            </div>
+            <div>
+                <img class="px-28" src="https://i.ibb.co/nLh9CYy/world.png" alt="">
+                <div class="text-center">
+                    <h3 class="font-bold text-4xl text-yellow-400 py-5">500+</h3>
+                    <p class="text-white text-xl">Điểm tham quan</p>
+                </div>
+            </div>
+            <div>
+                <img class="px-28" src="https://i.ibb.co/VjcvGPc/truck.png" alt="">
+                <div class="text-center">
+                    <h3 class="font-bold text-4xl text-yellow-400 py-5">856+</h3>
+                    <p class="text-white text-xl">Phương tiện</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end Sự hài lòng -->
+    <section class="container mx-auto">
+        <span class="block text-4xl text-center uppercase my-10">_ Tin tức - ưu đãi _</span>
+        <owl-carousel-o [options]="customHome">
+            <ng-template carouselSlide>
+                <a class="group" href="">
+                    <div class="overflow-hidden rounded-md border border-white">
+                        <img class="transition duration-300 transform group-hover:opacity-90 w-450 h-250"
+                            src="https://img.vietnamfinance.vn/upload/news/dinhtinh/2019/7/14/ds.jpg" alt="">
+                    </div>
+                    <div class="text-left px-3">
+                        <span class="text-lg font-bold pt-2 block">Đường sắt 'trăm tuổi' Việt Nam lọt top 10 tuyến đường
+                            sắt đẹp nhất thế giới</span>
+                        <span class="py-2 group-hover:text-blue-400 text-base truncate block">Dù cũ kỹ và thiếu sự đầu
+                            tư, nhưng tuyến đường sắt Bắc - Nam của Việt Nam vừa được bầu chọn vào top 10 tuyến đường
+                            sắt đẹp nhất thế giới vì đi qua nhiều khung cảnh đẹp, thơ mộng và hấp dẫn</span>
+                    </div>
+                </a>
+            </ng-template>
+            <ng-template carouselSlide>
+                <a class="group" href="">
+                    <div class="overflow-hidden rounded-md border border-white">
+                        <img class="transition duration-300 transform group-hover:opacity-90 w-450 h-250"
+                            src="https://dulichvietnam.com.vn/vnt_upload/File/Image/nhung_cung_duong_sat_dep_nhat_viet_nam_12.jpg"
+                            alt="">
+                    </div>
+                    <div class="text-left px-3">
+                        <span class="text-lg font-bold pt-2 block">Mê mẩn với những cung đường sắt đẹp nhất Việt
+                            Nam</span>
+                        <span class="py-2 group-hover:text-blue-400 text-base truncate block">Không phải ngẫu nhiên mà
+                            đường sắt Bắc Nam của Việt Nam từng lọt vào danh sách 10 tuyên đường sắt đẹp nhất thế giới.
+                            Không chỉ đi qua hàng loạt điểm du lịch nổi tiếng từ Bắc chí Nam, nhiều cung đường sắt đẹp
+                            nhất Việt Nam còn có phong cảnh cực đẹp và lạ mắt, đủ khiến bất cứ ai nhìn thấy đều muốn
+                            được đi qua, nhìn ngắm một lần. </span>
+                    </div>
+                </a>
+            </ng-template>
+            <ng-template carouselSlide>
+                <a class="group" href="">
+                    <div class="overflow-hidden rounded-md border border-white">
+                        <img class="transition duration-300 transform group-hover:opacity-90 w-450 h-250"
+                            src="https://media.laodong.vn/storage/newsportal/2020/2/16/784781/D9a94ee3e51d1d43440c-01.jpg"
+                            alt="">
+                    </div>
+                    <div class="text-left px-3">
+                        <span class="text-lg font-bold pt-2 block">Phát "sốt" với con đường hoa huỳnh liên đẹp như tranh
+                            vẽ tại Sài Gòn</span>
+                        <span class="py-2 group-hover:text-blue-400 text-base truncate block">Những ngày này, tuyến
+                            đường xe lửa TP.HCM, quận Phú Nhuận (TP.HCM) bỗng trở nên rực rỡ và không kém phần lãng mạn
+                            bởi sắc hoa huỳnh liên bung nở. Nhiều bạn trẻ tìm đến khu vực này để check-in, sống
+                            ảo.</span>
+                    </div>
+                </a>
+            </ng-template>
+            <ng-template carouselSlide>
+                <a class="group" href="">
+                    <div class="overflow-hidden rounded-md border border-white">
+                        <img class="transition duration-300 transform group-hover:opacity-90 w-450 h-250"
+                            src="http://www.vantaiduongsathanoi.vn/store/uploads/2017/07/a2.jpg" alt="">
+                    </div>
+                    <div class="text-left px-3">
+                        <span class="text-lg font-bold pt-2 block">THÔNG BÁO GIẢM GIÁ VÉ CHO CBCNV NGÀNH ĐƯỜNG
+                            SẮT</span>
+                        <span class="py-2 group-hover:text-blue-400 text-base truncate block">Nhằm
+                            tri
+                            ân, khuyến
+                            khích và
+                            tạo điều kiện cho toàn thể CBCNV đang làm việc trong toàn ngành Đường sắt. Công ty
+                            CPVTĐS Hà Nội xây dựng chính sách giá vé áp dụng cho CBCNV đi trên tất cả các đoàn tàu
+                            khách do Công ty quản lý như sau</span>
+                    </div>
+                </a>
+            </ng-template>
+        </owl-carousel-o>
+    </section>
+    <!-- end Tin tức - ưu đãi -->
+</main>
