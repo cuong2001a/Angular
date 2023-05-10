@@ -23,6 +23,7 @@ export const list = (req, res) => {
 }
 export const edit = async (req,res)=>{
     const {typeTripId} = req.params
+    console.log('typeTripId :', typeTripId);
     const updates = req.body
     const option = {new: true}
     try {

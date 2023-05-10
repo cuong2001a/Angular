@@ -15,7 +15,7 @@ export const findOneAddress = async (req, res) => {
     console.log("ID: ", req.params.addressGoId)
 
     try {
-        const result = await DiemDen.findById({ _id: addressGoId })
+        const result = await AddressGo.findById({ _id: addressGoId })
         res.json(result)
     } catch (error) {
         console.log(error)

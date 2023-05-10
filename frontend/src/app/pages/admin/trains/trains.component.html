@@ -38,9 +38,9 @@
                                     <td class="text-center py-3 px-4">{{i._id}}</td>
                                     <td class="text-center py-3 px-4">{{i.name}}</td>
                                     <td class="text-center py-3 px-4">{{i.addressArrival.name}}</td>
-                                    <td class="text-center py-3 px-4">{{i.addressGo.name}}</td>
-                                    <td class="text-center py-3 px-4">{{i.thoiGianDi}}</td>
-                                    <td class="text-center py-3 px-4">{{i.thoiGianVe}}</td>
+                                    <td class="text-center py-3 px-4">{{i.addressGo?.name}}</td>
+                                    <td class="text-center py-3 px-4">{{ i.thoiGianDi | date:'dd/MM/yyyy hh:mm'}}</td>
+                                    <td class="text-center py-3 px-4">{{i.thoiGianVe | date:'dd/MM/yyyy hh:mm'}}</td>
                                     <td class="text-center py-3 px-4">
                                         <button
                                             class="p-2 pl-5 mx-1 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
