@@ -1,18 +1,18 @@
 import InfoTicket from "../models/infoTicket"
 const emailRegexp =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-const cccdRegex = /^\d{12}$/
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+const cccdRegex = /^\d{12}$/;
 export const create = (req, res) => {
   const {nameUser, cmnd, phoneNumber, email, people, code} = req.body
   if (!nameUser) {
     return res.status(400).json({
       errors: "Vui lòng nhập họ tên",
     })
-  } else if (nameUser?.length > 255) {
+  } else if (nameUser.length > 255) {
     return res.status(400).json({
       errors: "Họ và tên không được quá 255 kí tự",
     })
-  } else if (phoneNumber?.length > 10) {
+  } else if (phoneNumber.length > 10) {
     return res.status(400).json({
       errors: "Số điện thoại không được quá 10 kí tự",
     })
@@ -53,14 +53,14 @@ export const edit = async (req, res) => {
       return res.status(400).json({
         errors: "Không được bỏ trống họ tên",
       })
-    } else if (nameUser?.length > 255) {
+    } else if (nameUser.length > 255) {
       return res.status(400).json({
         errors: "Không được bỏ trống họ tên",
       })
     }
   }
   if (phoneNumber) {
-    if (phoneNumber?.length > 10) {
+    if (phoneNumber.length > 10) {
       return res.status(400).json({
         errors: "Số điện thoại không được quá 10 kí tự",
       })
