@@ -21,17 +21,15 @@ const infoTicket = mongoose.Schema({
         requied: true
     },
     cmnd: {
-        type: Number,
-        requied: true
+        type: String,
     },
     phoneNumber: {
-        type: Number,
+        type: String,
         required: true,
-        maxLength: 13
+        maxLength: 10
     },
     email:{
         type: String,
-        required: true
     },
     people:{
         type: Number,
