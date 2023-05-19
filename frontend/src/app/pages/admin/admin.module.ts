@@ -30,6 +30,7 @@ import { TypeTripAddComponent } from './type-trip/type-trip-add/type-trip-add.co
 import { TicketAddComponent } from './type-ticket/ticket-add/ticket-add.component';
 import { TypeTripEditComponent } from './type-trip/type-trip-edit/type-trip-edit.component';
 import { TicketEditComponent } from './type-ticket/ticket-edit/ticket-edit.component';
+import { VndPipe } from "src/pipe/vnd-pipe";
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { TicketEditComponent } from './type-ticket/ticket-edit/ticket-edit.compo
     AdminRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class AdminModule { }

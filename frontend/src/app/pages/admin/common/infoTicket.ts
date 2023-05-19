@@ -9,4 +9,6 @@ export class InfoTicket{
     email!: String
     people!: number
     code!: String
+  typeTrip: any
+  payment: any
 }

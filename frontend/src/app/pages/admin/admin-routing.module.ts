@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './arrivals/add/add.component';
-import { ArrivalsComponent } from './arrivals/arrivals.component';
 import { DeskAddComponent } from './desk/desk-add/desk-add.component';
 import { DeskComponent } from './desk/desk.component';
 import { AddGoComponent } from './go/add-go/add-go.component';
@@ -24,105 +23,105 @@ import { TicketEditComponent } from './type-ticket/ticket-edit/ticket-edit.compo
 import { TrainCarEditComponent } from './train-car/train-car-edit/train-car-edit.component';
 import { TypeTripEditComponent } from './type-trip/type-trip-edit/type-trip-edit.component';
 import { DeskEditComponent } from './desk/desk-edit/desk-edit.component';
+import { VndPipe } from '../../../pipe/vnd-pipe';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: IndexComponent,
   },
   {
-    path: "train",
+    path: 'train',
     component: TrainsComponent,
   },
   {
     path: 'add-train',
-    component: AddTrainComponent
+    component: AddTrainComponent,
   },
   {
     path: 'trains-edit/:id',
-    component: EditTrainComponent
+    component: EditTrainComponent,
   },
   {
-    path: "trainCar",
-    component: TrainCarComponent
+    path: 'trainCar',
+    component: TrainCarComponent,
   },
   {
-    path: "trainCarAdd",
-    component: TrainCarAddComponent
+    path: 'trainCarAdd',
+    component: TrainCarAddComponent,
   },
   {
-    path: "trainCar-edit/:id",
-    component: TrainCarEditComponent
+    path: 'trainCar-edit/:id',
+    component: TrainCarEditComponent,
   },
   {
-    path: "desk",
-    component: DeskComponent
+    path: 'desk',
+    component: DeskComponent,
   },
   {
-    path: "desk-add",
-    component: DeskAddComponent
+    path: 'desk-add',
+    component: DeskAddComponent,
   },
   {
-    path: "desk-edit/:id",
-    component: DeskEditComponent
+    path: 'desk-edit/:id',
+    component: DeskEditComponent,
   },
   {
-    path: "address",
+    path: 'address',
     component: AddressComponent,
   },
   {
-    path: "arrival-edit/:id",
+    path: 'arrival-edit/:id',
     component: EditComponent,
   },
   {
-    path: "arrival-add",
-    component: AddComponent
+    path: 'arrival-add',
+    component: AddComponent,
   },
   {
-    path: "go",
-    component: GoComponent
+    path: 'go',
+    component: GoComponent,
   },
   {
-    path: "go-add",
-    component: AddGoComponent
+    path: 'go-add',
+    component: AddGoComponent,
   },
   {
-    path: "edit/:id",
-    component: EditGoComponent
+    path: 'edit/:id',
+    component: EditGoComponent,
   },
   {
-    path: "infotichet",
-    component: InfoTicketComponent
+    path: 'infotichet',
+    component: InfoTicketComponent,
   },
   {
-    path: "type-trip",
-    component: TypeTripComponent
+    path: 'type-trip',
+    component: TypeTripComponent,
   },
   {
-    path: "typeTrip-add",
-    component: TypeTripAddComponent
+    path: 'typeTrip-add',
+    component: TypeTripAddComponent,
   },
   {
-    path: "typeTrip-edit/:id",
-    component: TypeTripEditComponent
+    path: 'typeTrip-edit/:id',
+    component: TypeTripEditComponent,
   },
   {
-    path: "type-ticket",
-    component: TypeTicketComponent
+    path: 'type-ticket',
+    component: TypeTicketComponent,
   },
   {
-    path: "ticket-add",
-    component: TicketAddComponent
+    path: 'ticket-add',
+    component: TicketAddComponent,
   },
   {
-    path: "ticket-edit/:id",
-    component: TicketEditComponent
+    path: 'ticket-edit/:id',
+    component: TicketEditComponent,
   },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}

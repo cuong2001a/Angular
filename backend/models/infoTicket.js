@@ -16,6 +16,11 @@ const infoTicket = mongoose.Schema({
     ref: "Desk",
     required: true,
   },
+  typeTrip: {
+    type: ObjectId,
+    ref: "TypeTrip",
+    required: true,
+  },
   nameUser: {
     type: String,
     required: true,
@@ -24,11 +29,7 @@ const infoTicket = mongoose.Schema({
     type: Number,
     required: true,
   },
-  typeTrip: {
-    type: ObjectId,
-    ref: "TypeTrip",
-    required: true,
-  },
+
   payment: {
     type: String,
     required: true,

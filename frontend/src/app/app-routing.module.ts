@@ -8,6 +8,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AddTrainComponent } from './pages/admin/trains/add-train/add-train.component';
+import { VndPipe } from "src/pipe/vnd-pipe";
 
 const routes: Routes = [
   { path: '', redirectTo: 'client', pathMatch: 'full' },
@@ -20,6 +21,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

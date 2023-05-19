@@ -132,6 +132,7 @@ export const search = (req, res) => {
     .populate("train")
     .populate("trainCar")
     .populate("desk")
+    .populate("typeTrip")
     .exec((err, ticket) => {
       if (err) {
         res.status(400).json({
@@ -146,6 +147,7 @@ export const list = (req, res) => {
     .populate("train")
     .populate("trainCar")
     .populate("desk")
+    .populate("typeTrip")
 
     .exec((err, data) => {
       if (err) {

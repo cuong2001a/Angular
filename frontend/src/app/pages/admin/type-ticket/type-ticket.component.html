@@ -18,10 +18,14 @@
                             <thead class="bg-gray-800 text-white">
                                 <tr>
                                     <th class="text-center py-3 px-4 uppercase font-semibold text-sm">#</th>
-                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Id</th>
-                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Name</th>
-                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Giá vé</th>
-                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Toa Tàu</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Họ và tên</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Tàu</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Toa</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Ghế</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Loại chuyến đi
+                                    </th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Giá</th>
+                                    <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Trạng thái</th>
                                     <th class="text-center py-3 px-4 uppercase font-semibold text-sm">Service</th>
 
                                 </tr>
@@ -29,10 +33,17 @@
                             <tbody class="text-gray-700">
                                 <tr *ngFor="let i of ticket, let item = index">
                                     <td class="text-center py-3 px-4">{{item + 1}}</td>
-                                    <td class="text-center py-3 px-4">{{i._id}}</td>
-                                    <td class="text-center py-3 px-4">{{i.name}}</td>
-                                    <td class="text-center py-3 px-4">{{i.price}}</td>
-                                    <td class="text-center py-3 px-4">{{i.trainCar.name}}</td>
+                                    <td class="text-center py-3 px-4">{{i?.nameUser}}</td>
+                                    <td class="text-center py-3 px-4">{{i?.train?.name}}</td>
+                                    <td class="text-center py-3 px-4">{{i?.trainCar?.name}}</td>
+                                    <td class="text-center py-3 px-4">{{i?.desk?.name}}</td>
+                                    <td class="text-center py-3 px-4">{{i?.typeTrip?.name}}</td>
+                                    <td class="text-center py-3 px-4">{{i?.price }} VNĐ</td>
+                                    <td class="text-center py-3 px-4" *ngIf="i?.status"> <span class="text-green-500">Đã
+                                            thanh toán</span></td>
+                                    <td class="text-center py-3 px-4" *ngIf="!i?.status"> <span
+                                            class="text-red-500">Chưa thanh toán
+                                        </span></td>
                                     <td class="text-center py-3 px-4">
                                         <button
                                             class="p-2 pl-5 mx-1 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300"
@@ -40,6 +51,9 @@
                                         <button (click)="xoa(i._id)"
                                             class="p-2 pl-5 mx-1 pr-5 bg-yellow-500 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300"
                                             type="button">Xóa</button>
+                                        <button (click)="capnhat(i._id)"
+                                            class="p-2 pl-5 mx-1 pr-5 bg-green-500 text-gray-100 text-lg rounded-lg focus:border-4 border-green-300"
+                                            type="button">Cập nhật</button>
                                     </td>
                                 </tr>
                             </tbody>

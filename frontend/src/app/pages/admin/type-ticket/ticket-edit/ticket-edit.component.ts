@@ -2,67 +2,85 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TrainCarService } from 'src/app/pages/service/train-car.service';
-import { TrainsService } from 'src/app/pages/service/trains.service';
-import { TypeTicketService } from 'src/app/pages/service/type-ticket.service';
-import { Train } from '../../common/train';
 import { TrainCar } from '../../common/trainCar';
-import { TypeTicket } from '../../common/typeTicket';
+import { InfoTicketService } from 'src/app/pages/service/info-ticket.service';
+import { TypeTripService } from 'src/app/pages/service/type-trip.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-ticket-edit',
   templateUrl: './ticket-edit.component.html',
-  styleUrls: ['./ticket-edit.component.css']
+  styleUrls: ['./ticket-edit.component.css'],
 })
 export class TicketEditComponent implements OnInit {
   public id_ticket: any;
+
   ticketForm: FormGroup;
   trainCar: TrainCar[] = [];
-  typeTicket: TypeTicket[] = [];
-
+  dataInfoTicket: any;
+  typeTrip: any;
   constructor(
-    private ticketService: TypeTicketService,
+    private ticketService: InfoTicketService,
     private trainCarService: TrainCarService,
+    private typeTripService: TypeTripService,
     private fb: FormBuilder,
-    private router: Router,
+    public router: Router
   ) {
-    this.id_ticket = router.url.split('/')[3];
-    // console.log(this.id_ticket);
-    ticketService.read(this.id_ticket).subscribe((data) => {
-      console.log(data)
-      this.ticketForm.patchValue({
-        name: data.name,
-        price: data.price,
-        trainCar: data.trainCar,
-      })
-      // for (const controlName in this.ticketForm.controls) {
-      //   if (controlName) {
-      //     this.ticketForm.controls[controlName].setValue(data[controlName]);
-      //   }
-      //   console.log(controlName)
-      // }
-    })
     this.ticketForm = this.fb.group({
-      name: ["", Validators.required],
-      price: ["", Validators.required],
-      trainCar: ["", Validators.required],
-    })
+      nameUser: ['', Validators.required],
+      cmnd: ['', Validators.required],
+      email: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      typeTrip: ['', Validators.required],
+      payment: ['', Validators.required],
+    });
   }
 
   ngOnInit(): void {
-    this.trainCarService.getList().subscribe(data => {
-      this.trainCar = data;
-      console.log(this.trainCar)
+    this.id_ticket = this.router.url.split('/')[3];
+    this.ticketService.getDetail(this.id_ticket).subscribe((data) => {
+      this.dataInfoTicket = data;
+      this.ticketForm.patchValue({
+        nameUser: data?.nameUser,
+        cmnd: data?.cmnd,
+        email: data?.email,
+        phoneNumber: data?.phoneNumber,
+        typeTrip: data?.typeTrip?._id,
+        payment: data?.payment,
+      });
     });
-    this.ticketService.getList().subscribe(data => {
-      this.typeTicket = data;
-      // console.log(this.typeTicket)
+    this.typeTripService.getList().subscribe((data) => {
+      this.typeTrip = data;
     });
   }
 
   edit(): void {
-    this.ticketService.update(this.id_ticket, this.ticketForm.value).subscribe((data) => {
-      // console.log(data);
-      this.router.navigate(['admin/type-ticket']);
-    });
+    let newData = {
+      ...this.dataInfoTicket,
+      ...this.ticketForm.value,
+      payment: 'DIRECT',
+    };
+    delete newData?.code;
+    this.ticketService.update(this.id_ticket, newData).subscribe(
+      async (data) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Cập nhật thành công',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        await this.router.navigate(['/admin/type-ticket']);
+      },
+      (error) => {
+        const { errors } = error.error;
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Tạo thất bại',
+          text: `${errors}`,
+        });
+      }
+    );
   }
 }

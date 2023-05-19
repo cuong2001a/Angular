@@ -43,12 +43,13 @@ export class TrainCarEditComponent implements OnInit {
       train: ["", Validators.required],
     })
   }
-
+  
   ngOnInit(): void {
     this.trainCarService.getList().subscribe(data => {
       this.trainCar = data;
     });
     this.trainService.getList().subscribe(data => {
+    console.log('data :', data);
       this.train = data;
       console.log(data)
     });
