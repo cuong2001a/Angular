@@ -7,57 +7,68 @@ import { TrainCarService } from 'src/app/pages/service/train-car.service';
 @Component({
   selector: 'app-choose-seat',
   templateUrl: './choose-seat.component.html',
-  styleUrls: ['./choose-seat.component.css']
+  styleUrls: ['./choose-seat.component.css'],
 })
 export class ChooseSeatComponent implements OnInit {
-  dataDesks: any
-  a: any
-  getDesk: any
-  isGetDesk: boolean = false
-  constructor(private route: ActivatedRoute,
+  dataDesks: any;
+  a: any;
+  getDesk: any;
+  isGetDesk: boolean = false;
+  chooseTrainCar: any ;
+  train: any;
+  trainCar: any;
+  typeTrip: any;
+  constructor(
+    private route: ActivatedRoute,
     private deskService: DeskService,
     private trainCarService: TrainCarService,
-    private router: Router) {
+    private router: Router
+  ) {
     this.getDeskById();
   }
 
   ngOnInit(): void {
-    this.getTrainCar()
+    this.getTrainCar();
+    this.chooseTrainCar = JSON.parse(localStorage.getItem("chooseCar")||'{}') ;
+    this.train = JSON.parse(localStorage.getItem("train")||'{}') ;
+    this.typeTrip = JSON.parse(localStorage.getItem("typeTrips")||'{}') ;
+
   }
   getDeskById() {
     this.a = this.route.snapshot.paramMap.get('id');
-    console.log(this.a)
-    this.deskService.getDeskById(this.a).subscribe(data => {
+    this.deskService.getDeskById(this.a).subscribe((data) => {
       this.dataDesks = data;
-      console.log(this.dataDesks);
-    })
+    });
   }
 
   getId(a: any) {
     this.isGetDesk = true;
-    this.deskService.findbyId(a).subscribe(data => {
+    this.deskService.findbyId(a).subscribe((data) => {
       if (data != undefined) {
         this.getDesk = data;
-        console.log(this.getDesk)
       }
-    })
+    });
   }
- changeStatusDesk(id:any) {
+ 
+  async changeStatusDesk(id: any) {
     let newGetDesk = {
+      _id:id,
       ...this.getDesk,
-      status: true
-    }
-    console.log(newGetDesk);
-
-    this.deskService.update(id,newGetDesk).subscribe(async data=>{
-      await localStorage.setItem("desk",JSON.stringify(data))
-      await this.router.navigate(['/client/information'])
-    })
+      status: true,
+    };
+    await localStorage.setItem('desk', JSON.stringify(newGetDesk));
+    await this.router.navigate(['/client/information']);
   }
-  getTrainCar(){
+  async changReturnChooseCar(){
+    let data: any = localStorage.getItem('train');
+    const result = JSON.parse(data);
+    await this.router.navigate([`/client/car/${result._id}`]);
+  }
+  getTrainCar() {
     this.a = this.route.snapshot.paramMap.get('id');
-    this.trainCarService.findById(this.a).subscribe(data=>{
-      localStorage.setItem("trainCar",JSON.stringify(data))
-    })
+    this.trainCarService.findById(this.a).subscribe((data) => {
+      this.trainCar = data;
+      localStorage.setItem('trainCar', JSON.stringify(data));
+    });
   }
 }

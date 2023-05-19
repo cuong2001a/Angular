@@ -1,9 +1,9 @@
 import InfoTicket from "../models/infoTicket"
 const emailRegexp =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-const cccdRegex = /^\d{12}$/;
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+const cccdRegex = /^\d{12}$/
 export const create = (req, res) => {
-  const {nameUser, cmnd, phoneNumber, email, people, code} = req.body
+  const {nameUser, cmnd, phoneNumber, email, people, code, payment} = req.body
   if (!nameUser) {
     return res.status(400).json({
       errors: "Vui lòng nhập họ tên",
@@ -27,6 +27,10 @@ export const create = (req, res) => {
   } else if (!people) {
     return res.status(400).json({
       errors: "Vui lòng nhập số lượng người",
+    })
+  } else if (!payment) {
+    return res.status(400).json({
+      errors: "Vui chọn phương thức thanh toán",
     })
   } else if (!code) {
     return res.status(400).json({

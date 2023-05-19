@@ -14,9 +14,9 @@
                     <i class="px-2 fas fa-subway"></i>
                     <div>
                         <div>
-                            <span class="text-base font-semibold">Hà Nội</span>
+                            <span class="text-base font-semibold">{{train?.addressGo?.name || ""}}</span>
                             <span class="px-2"><i class="fas fa-arrow-right"></i></span>
-                            <span class="text-base font-semibold">Hải Phòng</span>
+                            <span class="text-base font-semibold">{{train?.addressArrival?.name || ""}}</span>
                         </div>
                         <span class="ml-5">Lựa chọn tàu</span>
                     </div>
@@ -82,42 +82,46 @@
     <section class="grid grid-cols-12 space-x-3 container mx-auto my-10">
         <article class="col-span-3">
             <form action="" class=" border relative overflow-hidden bg-fixed">
-                <img class="w-96 h-[400px] opacity-30"
+                <img class="w-96 h-[500px] opacity-30"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7-_h5oFnFrvWOHqK4BNggZCMP_I78Uj-Fhg&usqp=CAU"
                     alt="">
                 <div class="absolute top-0 bottom-0 left-0 right-0 p-10 space-y-2">
                     <span class="text-3xl font-semibold text-center block uppercase">Thông tin vé</span>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Chặng:</label>
-                        <span class="col-span-3">Hà Nội - Hải Phòng</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Chặng:</label>
+                        <span class="col-span-3">{{train?.addressGo?.name || ""}} - {{train?.addressArrival?.name || ""}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Ngày đi:</label>
-                        <span class="col-span-3">20.11.2021</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Ngày đi:</label>
+                        <span class="col-span-3">{{train?.thoiGianDi | date: "dd/MM/YYYY"}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Ngày về:</label>
-                        <span class="col-span-3">25.11.2021</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Ngày về:</label>
+                        <span class="col-span-3">{{train?.thoiGianVe | date: "dd/MM/YYYY"}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Số hiệu:</label>
-                        <span class="col-span-3">SQN1</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Số hiệu:</label>
+                        <span class="col-span-3">{{train?.name}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Loại vé:</label>
-                        <span class="col-span-3">Khứ hồi</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Toa tàu:</label>
+                        <span class="col-span-3">{{trainCar?.name}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Số người:</label>
+                        <label class="font-semibold col-span-1 text-left" for="">Loại chuyến đi</label>
+                        <span class="col-span-3">{{typeTrip?.name}}</span>
+                    </div>
+                    <div class="grid grid-cols-4 space-x-3 text-lg">
+                        <label class="font-semibold col-span-1 text-left" for="">Số người:</label>
                         <span class="col-span-3">1</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Loại toa:</label>
-                        <span class="col-span-3">2 (Giường nằm)</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Loại chỗ ngồi:</label>
+                        <span class="col-span-3">{{chooseTrainCar?.positionTrainCar}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Giá vé:</label>
-                        <p class="col-span-3"><span class="bg-red-500 text-white px-2">500.000</span> ₫/khách</p>
+                        <label class="font-semibold col-span-1 text-left" for="">Giá vé:</label>
+                        <p class="col-span-3"> <span class="bg-red-500 text-white px-2">{{chooseTrainCar?.priceTrainCar | vnd}}</span> ₫/khách</p>
                     </div>
                 </div>
             </form>
@@ -125,62 +129,6 @@
         <article class="col-span-1"></article>
         <form class="col-span-8">
             <span class="text-3xl font-semibold text-center block uppercase">Lựa chọn chỗ</span>
-            <!-- <table class="border border-blue-500 mx-auto border-separate my-10">
-                <tbody class="" *ngFor="let a of dataDesk.result"> -->
-            <!-- <tr class="">
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-yellow-500">01</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-gray-300">02</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-yellow-500">03</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-red-500">04</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-gray-300">05</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2">06</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-yellow-500">07</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2">08</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-gray-300">09</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-yellow-500">10</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2">11</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2">12</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-yellow-500">13</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2">14</button>
-                        </td>
-                        <td><button
-                                class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-gray-300">15</button>
-                        </td>
-                    </tr> -->
-            <!-- <tr >
-                        <td><button class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:ring-2 bg-yellow-500">
-                            {{a.name}}</button>
-                        </td>
-                    </tr> -->
-            <!-- </tbody>
-            </table> -->
             <div class="grid grid-cols-12 gap-5 border border-blue-500 mx-auto border-separate">
                 <div class="col-span-2" *ngFor="let dataDesk of dataDesks">
                     <button *ngIf="dataDesk.status == true"
@@ -191,10 +139,6 @@
                         class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:bg-red-500 bg-gray-300 ">
                         {{dataDesk.name}}
                     </button>
-                    <!-- <ng-template #rain><button (click)="getId(i._id)"
-                            class="border-b-2 rounded-md border-blue-500 px-5 py-2 mx-1 cursor-pointer focus:ring-yellow-500 focus:bg-red-500 bg-gray-300 active:">
-                            {{i.name}}</button> </ng-template> -->
-
                 </div>
             </div>
             <article>
@@ -218,8 +162,9 @@
             </article>
             <article class="space-x-5 text-center">
                 <button
+                    (click)="changReturnChooseCar()"
                     class="bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500 border border-blue-500 ">
-                    <a routerLink='/client/car'>Trở lại</a>
+                   Trở lại
                 </button>
                 <button (click)="changeStatusDesk(getDesk._id)"
                     class="bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500 border border-blue-500 ">

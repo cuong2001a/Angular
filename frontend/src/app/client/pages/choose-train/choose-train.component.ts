@@ -9,11 +9,13 @@ import { Train } from 'src/app/pages/admin/common/train';
 })
 export class ChooseTrainComponent implements OnInit {
   data : any;
+  dataTrain: any;
   constructor() { }
 
   ngOnInit(): void {
     this.data = JSON.parse(localStorage.getItem("data")||'{}') ;
-    console.log(this.data)
+    this.dataTrain = JSON.parse(localStorage.getItem("trainCar")||'{}') ;
+    console.log('this.dataTrain :', this.dataTrain);
   }
 
 }

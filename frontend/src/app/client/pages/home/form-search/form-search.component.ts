@@ -57,26 +57,23 @@ export class FormSearchComponent implements OnInit {
     return this.reactiveForm.controls
   }
   onSubmit() {
-    console.log(this.reactiveForm.value)
+    const {typeTrip} = this.reactiveForm.value
     this.trainService.findTrain(this.reactiveForm.value).subscribe(async data => {
       await localStorage.setItem("data", JSON.stringify(data))
+      await localStorage.setItem("typeTrip", JSON.stringify(typeTrip))
       await this.router.navigate(['/client/train'])
-      console.log(data)
     })
 
   }
   ngOnInit(): void {
     this.arrivalService.getList().subscribe(data => {
       this.arrival = data
-      console.log(this.arrival)
     })
     this.goService.getList().subscribe(data => {
       this.go = data
-      console.log(this.go)
     })
     this.typeTripService.getList().subscribe(data => {
       this.typeTrip = data
-      console.log(this.typeTrip)
     })
 
   }

@@ -12,6 +12,7 @@ import { ChooseCarComponent } from './pages/choose-car/choose-car.component';
 import { ChooseSeatComponent } from './pages/choose-seat/choose-seat.component';
 import { InformationComponent } from './pages/information/information.component';
 import { SuccessComponent } from './pages/success/success.component';
+import { VndPipe } from "src/pipe/vnd-pipe";
 const routes: Routes = [{ path: '', component: ClientComponent,
 children:[
   {path:"",component:HomeComponent},
@@ -28,6 +29,7 @@ children:[
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule,VndPipe],
+  declarations: [VndPipe],
 })
 export class ClientRoutingModule { }

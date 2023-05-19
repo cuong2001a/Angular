@@ -14,9 +14,9 @@
                     <i class="px-2 fas fa-subway"></i>
                     <div>
                         <div>
-                            <span class="text-base font-semibold">Hà Nội</span>
+                            <span class="text-base font-semibold">{{dataTrain?.addressArrival?.name}}</span>
                             <span class="px-2"><i class="fas fa-arrow-right"></i></span>
-                            <span class="text-base font-semibold">Hải Phòng</span>
+                            <span class="text-base font-semibold">{{dataTrain?.addressGo?.name}}</span>
                         </div>
                         <span class="ml-5">Lựa chọn tàu</span>
                     </div>
@@ -89,32 +89,32 @@
                 <div   class="absolute top-0 bottom-0 left-0 right-0 p-10 space-y-2">
                     <span class="text-3xl font-semibold text-center block uppercase">Thông tin vé</span>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Chặng:</label>
-                        <span class="col-span-3">{{dataTrain.addressArrival.name}} -{{dataTrain.addressGo.name}} </span>
+                        <label class="font-semibold col-span-1 text-left" for="">Chặng:</label>
+                        <span class="col-span-3">{{dataTrain?.addressArrival?.name}} -{{dataTrain?.addressGo?.name}} </span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Ngày đi:</label>
-                        <span class="col-span-3">{{dataTrain.thoiGianDi}}</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Ngày đi:</label>
+                        <span class="col-span-3">{{dataTrain?.thoiGianDi | date:'dd/MM/yyyy'}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Ngày về:</label>
-                        <span class="col-span-3">{{dataTrain.thoiGianVe}}</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Ngày về:</label>
+                        <span class="col-span-3">{{dataTrain?.thoiGianVe | date:'dd/MM/yyyy'}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Số hiệu:</label>
-                        <span class="col-span-3">{{dataTrain.name}}</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Số hiệu:</label>
+                        <span class="col-span-3">{{dataTrain?.name}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Loại vé:</label>
-                        <span class="col-span-3">Khứ hồi</span>
+                        <label class="font-semibold col-span-1 text-left" for="">Loại vé:</label>
+                        <span class="col-span-3">{{typeTrip.name}}</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Số người:</label>
+                        <label class="font-semibold col-span-1 text-left" for="">Số người:</label>
                         <span class="col-span-3">1</span>
                     </div>
                     <div class="grid grid-cols-4 space-x-3 text-lg">
-                        <label class="font-semibold col-span-1 text-right" for="">Giá vé:</label>
-                        <p class="col-span-3"><span class="bg-red-500 text-white px-2">500.000</span> ₫/khách</p>
+                        <label class="font-semibold col-span-1 text-left" for="">Giá vé:</label>
+                        <p class="col-span-3"><span class="bg-red-500 text-white px-2">{{priceTrainCar | vnd}}</span> ₫/khách</p>
                     </div>
                 </div>
             </form>
@@ -123,8 +123,8 @@
         <form class="col-span-8">
             <span class="text-3xl font-semibold text-center block uppercase">Lựa chọn Loại toa</span>
             <article class="grid grid-cols-7 my-10">
-                <div *ngFor="let i of dataTrainCar.list"  class="group cursor-pointer">
-                    <div (click)="chooseTrainCar(i._id)" class="transform group-hover:-translate-y-5 translate-y-0 duration-1000">
+                <div *ngFor="let i of dataTrainCar?.list; let index = index"  class="group cursor-pointer">
+                    <div (click)="chooseTrainCar(i?._id, index)" class="transform group-hover:-translate-y-5 translate-y-0 duration-1000">
                         <img src="https://i.ibb.co/HN6Tfk1/toaTau.png" alt="">
                         <div class="block text-lg mt-3 text-center font-semibold space-x-0.5">
                             <span>{{i?.name}}</span>
@@ -168,7 +168,7 @@
             </article>
             <article class="text-lg font-semibold space-x-2 my-5">
                 <span>Chọn toa:</span>
-                <span>{{hintTrainCarChoose.name}}</span>
+                <span>{{hintTrainCarChoose?.name}}</span>
             </article>
             <article class="text-lg space-x-2 text-red-500">
                 <span class="text-red-500">*</span>
@@ -180,9 +180,9 @@
                     class="bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500 border border-blue-500 ">
                     <a routerLink='/client/train'>Trở lại</a>
                 </button>
-                <button class=" bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500
+                <button (click)="submitNextChooseSeat()" class=" bg-blue-500 px-10 py-2 rounded-md text-lg text-white hover:bg-white hover:text-blue-500
                         border border-blue-500 ">
-                    <a routerLink='/client/seat/{{hintTrainCarChoose._id}}'>Tiếp tục</a>
+                    Tiếp tục
                 </button>
             </article>
         </form>
