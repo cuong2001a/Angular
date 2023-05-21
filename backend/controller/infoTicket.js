@@ -160,12 +160,20 @@ export const list = (req, res) => {
 }
 export const findOne = async (req, res) => {
   const {infoTicketId} = req.params
-  const result = await InfoTicket.findById({_id: infoTicketId}).exec((err, data) => {
-    if (err) {
-      res.status(400).json({
-        error: "khong tim thay ve a",
-      })
-    }
-    res.json(data)
-  })
+  const result = await InfoTicket.findById({_id: infoTicketId})
+    .populate({
+      path: "train",
+      populate: [{path: "addressArrival"}, {path: "addressGo"}],
+    })
+    .populate("trainCar")
+    .populate("desk")
+    .populate("typeTrip")
+    .exec((err, data) => {
+      if (err) {
+        res.status(400).json({
+          error: "khong tim thay ve a",
+        })
+      }
+      res.json(data)
+    })
 }

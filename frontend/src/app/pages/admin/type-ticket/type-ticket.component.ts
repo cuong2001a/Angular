@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { InfoTicketService } from '../../service/info-ticket.service';
 import { TypeTicketService } from '../../service/type-ticket.service';
+import { InfoTicket } from "../common/infoTicket";
 
 @Component({
   selector: 'app-type-ticket',
@@ -10,7 +11,8 @@ import { TypeTicketService } from '../../service/type-ticket.service';
 })
 export class TypeTicketComponent implements OnInit {
   ticket: any;
-
+  isShowModal: boolean = false;
+  detailTicket: any;
   constructor(private ticketService: InfoTicketService) {}
 
   ngOnInit(): void {
@@ -20,8 +22,13 @@ export class TypeTicketComponent implements OnInit {
   getListData() {
     this.ticketService.getList().subscribe((data) => {
       this.ticket = data;
-      console.log(this.ticket);
     });
+  }
+
+  getDetailData(id: InfoTicket) {
+    this.ticketService.getDetail(id).subscribe((data)=> {
+      this.detailTicket = data;
+    })
   }
 
   xoa(id: any) {
@@ -66,5 +73,14 @@ export class TypeTicketComponent implements OnInit {
         });
       }
     });
+  }
+
+  chitiet(id: any) {
+    this.isShowModal = true;
+    this.getDetailData(id);
+  }
+
+  dongChiTiet(){
+    this.isShowModal = false;
   }
 }
